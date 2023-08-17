@@ -11,6 +11,7 @@ const Signup = () => {
     username: '',
     email: '',
     password: '',
+    sign: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -67,6 +68,28 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <select
+                  className="form-input"
+            
+                  name="sign"
+                
+                  value={formState.sign}
+                  onChange={handleChange}
+                >
+                  <option value = "choose">What's your sign?</option>
+                  <option value = "Aries">Aries</option>
+                  <option value = "Taurus">Taurus</option>
+                  <option value = "Gemini">Gemini</option>
+                  <option value = "Cancer">Cancer</option>
+                  <option value = "Leo">Leo</option>
+                  <option value = "Virgo">Virgo</option>
+                  <option value = "Libra">Libra</option>
+                  <option value = "Scorpio">Scorpio</option>
+                  <option value = "Sagitarrius">Sagitarrius</option>
+                  <option value = "Capricorn">Capricorn</option>
+                  <option value = "Aquarius">Aquarius</option>
+                  <option value = "Pisces">Pisces</option>
+                </select>
                 <input
                   className="form-input"
                   placeholder="******"

@@ -4,6 +4,7 @@ const typeDefs = `
     username: String
     email: String
     password: String
+    sign: String
     thoughts: [Thought]!
   }
 
@@ -35,7 +36,7 @@ const typeDefs = `
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!, sign: String!): Auth
     login(email: String!, password: String!): Auth
     addThought(thoughtText: String!, thoughtAuthor: String!): Thought
     addComment(

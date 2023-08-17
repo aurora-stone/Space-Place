@@ -3,6 +3,45 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 const Header = () => {
+  const getEmoji = (sign) => {
+    if (sign === "Aries") {
+      return "♈"
+    }
+    if (sign === "Taurus") {
+      return "♉"
+    }
+    if (sign === "Gemini") {
+      return "♊"
+    }
+    if (sign === "Cancer") {
+      return "♋"
+    }
+    if (sign === "Leo") {
+      return "♌"
+    }
+    if (sign === "Virgo") {
+      return "♍"
+    }
+    if (sign === "Libra") {
+      return "♎"
+    }
+    if (sign === "Scorpio") {
+      return "♏"
+    }
+    if (sign === "Sagitarrius") {
+      return "♐"
+    }
+    if (sign === "Capricorn") {
+      return "♑"
+    }
+    if (sign === "Aquarius") {
+      return "♒"
+    }
+    if (sign === "Pisces") {
+      return "♓"
+    }
+  }
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -19,7 +58,8 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <span>Welcome {Auth.getProfile().data.username}!</span>
+              <span>Welcome {Auth.getProfile().data.username}! You're a {Auth.getProfile().data.sign} {getEmoji(Auth.getProfile().data.sign)} </span>
+              {/* <span> {Auth.getProfile().data.sign}</span> */}
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
